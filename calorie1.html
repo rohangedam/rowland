@@ -57,7 +57,53 @@ function protein(){
 			var ocarbs=carbcal/4;
 			document.getElementById('carbs').value=ocarbs;
 	}
+	function validate(){
 	
+	var numbers = /^[0-9]+$/;
+	
+	var height=document.getElementById('height').value;
+	var weight=document.getElementById('weight').value;
+	var age=document.getElementById('age').value;
+	
+	if(height.length=='' || height.length==null){
+		document.getElementById('chkheight').innerHTML="height is required";
+		document.getElementById('height').focus();
+		return false;
+		
+	}
+	else if(weight.length=='' || weight.length==null){
+		document.getElementById('chkweight').innerHTML="weight is required";
+		document.getElementById('weight').focus();
+		return false;
+	}else if(age.length=='' || age.length==null){
+		document.getElementById('chkage').innerHTML="age is required";
+		document.getElementById('age').focus();
+		return false;
+	}/*else if(!height.match(numbers)){
+		document.getElementById('chkheight').innerHTML="height muts be in number";
+		document.getElementById('height').focus();
+		return false;
+		
+	}else if(!weight.match(numbers)){
+		document.getElementById('chkweight').innerHTML="weight muts be in number";
+		document.getElementById('weight').focus();
+		return false;
+		
+	}else if(!age.match(numbers)){
+		document.getElementById('chkage').innerHTML="age muts be in number";
+		document.getElementById('age').focus();
+		return false;
+		
+	}*/
+	
+	
+	else{
+		return true;
+	}
+	
+
+	
+}
 
 
 	
