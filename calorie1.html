@@ -36,12 +36,12 @@ function cal(){
 	document.getElementById('bmr').value=88.362+t1+temp;
 }     
 
-function calorie(){
+function cal1(){
 	var b=document.getElementById('bmr').value;
 	document.getElementById('calorie').value=b*1.375;
 }
 
-function protein(){
+function pro(){
 	
 		
 			var h=document.getElementById('height').value;
@@ -57,7 +57,8 @@ function protein(){
 			var ocarbs=carbcal/4;
 			document.getElementById('carbs').value=ocarbs;
 	}
-	function validate(){
+	
+function validate(){
 	
 	var numbers = /^[0-9]+$/;
 	
@@ -104,7 +105,6 @@ function protein(){
 
 	
 }
-
 
 	
 	
@@ -185,7 +185,7 @@ function protein(){
 
 
 
-
+<form onsubmit="return validate()">
 <div class="container">
 <div class="row">
 <div class="col col-lg-2"></div>
@@ -195,16 +195,19 @@ function protein(){
 <div class="form-group">
 <label>Enter Height</label>
 <input type="text" name="height" id="height" class="form-control">
+	<small class="text-danger" id="chkheight"></small>
 </div>
 
 <div class="form-group">
 <label>Enter Weight</label>
 <input type="text" name="weight1" id="weight" class="form-control">
+	<small class="text-danger" id="chkweight"></small>
 </div>
 
 <div class="form-group">
 <label>Enter Age</label>
 <input type="text" name="age" id="age" class="form-control">
+	<small class="text-danger" id="chkage"></small>
 </div>
 
 <div class="row">
@@ -219,7 +222,7 @@ function protein(){
 
 <div class="form-group">
 <label>Calorie</label>
-<input type="text" name="bmr" id="calorie" class="form-control" onfocus="calorie()">
+<input type="text" name="bmr" id="calorie" class="form-control" onfocus="cal1()">
 </div>
 </div>
 </div>
@@ -242,36 +245,39 @@ function protein(){
 <div class="col col-lg-4">
 <div class="form-group">
 <label>Protein</label>
-<input type="text" name="bmr" id="protein" class="form-control" onfocus="protein()">
+<input type="text" name="bmr" id="protein" class="form-control" onfocus="pro()">
 </div>
 </div>
 <div class="col col-lg-4">
 <div class="form-group">
 <label>Fats</label>
-<input type="text" name="bmr" id="fats" class="form-control" onfocus="protein()">
+<input type="text" name="bmr" id="fats" class="form-control" onfocus="pro()">
 </div>
 </div>
 <div class="col col-lg-4">
 <div class="form-group">
 <label>Carbs</label>
-<input type="text" name="bmr" id="carbs" class="form-control" onfocus="protein()">
-</div>
-</div>
-</div>
-
-
-<div class="col col-lg-12">
-<img onmouseover="bigImg(this)" onmouseout="change(this)" id="images" src="gif.jpeg"  width="600" height="400">
-</div>
-
-
-
-
-</div>
-</div>
+<input type="text" name="bmr" id="carbs" class="form-control" onfocus="pro()">
 </div>
 </div>
 
+<br>
+<div class="form-group" style="margin-left:300px">
+		   			<button class="btn btn-success" type="submit">Submit</button>
+		   		</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</form>
 
 
 
