@@ -18,6 +18,152 @@
     <title>about</title>
   </head>
   <body>
+  
+  
+  <script>
+function validation(){
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	
+	
+	var mail=document.getElementById('mail11').value;
+	var password=document.getElementById('password11').value;
+	if(mail=='' || mail==null){
+		document.getElementById('chkmail11').innerHTML="plz type mail address";
+		document.getElementById('mail11').focus();
+		return false;
+	}if(password=='' || password==null ){
+		document.getElementById('chkpassword11').innerHTML="plz type password";
+		document.getElementById('password11').focus();
+		return false;
+		
+	}if(!mail.match(mailformat)){
+		document.getElementById('chkmail11').innerHTML="plz type correct mail";
+		document.getElementById('mail11').focus();
+		return false;
+	}
+}
+function validate(){
+	 var letter = /^[A-Za-z]+$/;
+	 var passw=  /^[A-Za-z]\w{7,14}$/;
+	 var mailv=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	 var phonev=/^\d{10}$/;
+	 var cardno = /^\d{16}$/;
+	
+var username=document.getElementById('username').value;
+var password=document.getElementById('password').value;
+var password1=document.getElementById('password1').value;
+var mail=document.getElementById('mail').value;
+var phone=document.getElementById('phone').value;
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var city=document.getElementById('city').value;
+var credit=document.getElementById('credit').value;
+var ipaddress=/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+var ip=document.getElementById('ip').value;
+
+
+if(username=='' ){
+	
+	document.getElementById('chkusername').innerHTML="plz type username";
+	document.getElementById('username').focus();
+	return false;
+}if((username.length<=2) || (username.length>=10)){
+	document.getElementById('chkusername').innerHTML="username length muts be between 2 to 10";
+	document.getElementById('username').focus();
+	return false;
+}if(!username.match(letter)){
+	document.getElementById('chkusername').innerHTML="username must be not in number";
+	document.getElementById('username').focus();
+	return false;
+}
+
+if(password=='' || password==null){
+	
+	document.getElementById('chkpassword').innerHTML="plz type password";
+	document.getElementById('password').focus();
+	return false;
+}
+if((password.length<=5) || (password.length>=10)){
+	document.getElementById('chkpassword').innerHTML="password length muts be between 2 to 10";
+	document.getElementById('password').focus();
+	return false;
+}
+if(!password.match(passw)){
+	document.getElementById('chkpassword').innerHTML="password must be conatin no. alpahbet and speical charcter and must conatin 6 to 20 character";
+	document.getElementById('password').focus();
+	return false;
+}
+
+if(password1=='' || password1==null){
+
+	document.getElementById('chkpassword1').innerHTML="plz confirm password";
+	document.getElementById('password1').focus();
+	return false;
+}if(password!=password1){
+	document.getElementById('chkpassword1').innerHTML="password not match";
+	document.getElementById('password1').focus();
+	return false;
+}
+if(mail=='' || mail==null){
+	
+	document.getElementById('chkmail').innerHTML="plz type mail";
+	document.getElementById('mail').focus();
+	return false;
+}else if(!mail.match(mailformat)){
+	document.getElementById('chkmail').innerHTML="plz type correct mail";
+	document.getElementById('mail').focus();
+	return false;
+}
+if(phone=='' || phone==null){
+	
+	document.getElementById('chkphone').innerHTML="plz type phone no";
+	document.getElementById('phone').focus();
+	return false;
+}if(!phone.match(phonev)){
+	
+	document.getElementById('chkphone').innerHTML="plz type correct phone number";
+	document.getElementById('phone').focus();
+	return false;
+}
+	else if(city=='selectcity'){
+	
+	document.getElementById('chkcity').innerHTML="plz select city";
+	document.getElementById('city').focus();
+	return false;
+	
+}if(document.getElementById('male').checked==false && document.getElementById('female').checked==false ){
+	document.getElementById('chkgender').innerHTML="plz select your gender";
+	
+	return false;
+	
+}if(credit=='' || credit==null){
+	document.getElementById('chkcredit').innerHTML="plz type credit no";
+	document.getElementById('credit').focus();
+	return false;
+
+}else if(!credit.match(cardno)){
+	document.getElementById('chkcredit').innerHTML="plz enetr 16 digit credit no";
+	document.getElementById('credit').focus();
+	return false;
+	
+}if(ip == '' || ip == null){
+	
+	document.getElementById('chkip').innerHTML="plz enter ip address";
+	document.getElementById('ip').focus();
+	return false;
+}else if(!ip.match(ipaddress)){
+	document.getElementById('chkip').innerHTML="invalid ip address";
+	document.getElementById('ip').focus();
+	return false;
+	
+}
+else{
+	return true;
+}
+
+}
+</script>
+  
+  
     
     
     <!-- navbar -->
@@ -35,7 +181,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/rowland/">HOME</a>
+        <a class="nav-link" href="/rowland/index.jsp">HOME</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/rowland/about.html">About</a>
@@ -54,7 +200,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/rowland/contact.html">Contact Us</a>
       </li>
-	     <li class="nav-item">
+       <li class="nav-item">
         <a class="nav-link" href="/rowland/calorie1.html">Calorie & Nutrients</a>
       </li>
     </ul>
@@ -156,24 +302,30 @@
         </button>
       </div>
       <div class="modal-body">
-       <form>
+      
+       <form onsubmit="return validation()">
   <div class="form-group">
     <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input type="text" class="form-control" id="mail11" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="chkmail11" class="text-danger">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter Password">
+    <input type="password" class="form-control" id="password11" placeholder="enter Password">
+      <small id="chkpassword11" class="text-danger"></small>
   </div>
 
   
-</form>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <button type="button" class="btn btn-primary">Login</button>
+        
+        <button class="btn btn-default" style='font-size:18px' data-dismiss="modal">Back <i class='fas fa-backward'></i></button>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">Login</button>
       </div>
+      </div>
+      </form>
     </div>
   </div>
 </div>
@@ -200,82 +352,83 @@
 
 
 
-<div class="card bg-light">
-<article class="card-body mx-auto" style="max-width: 400px;">
-	<h4 class="card-title mt-3 text-center">Create Account</h4>
-	<p class="text-center">Get started with your free account</p>
-	<p>
-		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-	</p>
-	<p class="divider-text">
-        <span class="bg-light">OR</span>
-    </p>
-	<form>
-	<div class="form-group input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Full name" type="text">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Email address" type="email">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-		</div>
-		<select class="custom-select" style="max-width: 120px;">
-		    <option selected="">+971</option>
-		    <option value="1">+972</option>
-		    <option value="2">+198</option>
-		    <option value="3">+701</option>
-		</select>
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-		</div>
-		<select class="form-control">
-			<option selected=""> Select job type</option>
-			<option>Designer</option>
-			<option>Manager</option>
-			<option>Accaunting</option>
-		</select>
-	</div> <!-- form-group end.// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Create password" type="password">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Repeat password" type="password">
-    </div> <!-- form-group// -->                                      
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
-    </div> <!-- form-group// -->      
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
-</form>
-</article>
-</div> <!-- card.// -->
-
-</div> 
-<!--container end.//-->
-
-<br><br>
-
-      </div>
-    
-    </div>
+<div class="container">
+<div class="col col-lg-8">
+<form onsubmit="return validate()">
+  <div class="form-group">
+    <label >Username</label>
+    <input type="text" class="form-control" id="username"  placeholder="Enter email">
+    <small id="chkusername" class="text-danger"></small>
   </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password">
+    <small id="chkpassword" class="text-danger"></small>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Confirm Password</label>
+    <input type="password" class="form-control" id="password1" placeholder="confirm Password">
+    <small id="chkpassword1" class="text-danger"></small>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Mail</label>
+    <input type="text" class="form-control" id="mail" placeholder="enter mail">
+    <small id="chkmail" class="text-danger"></small>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Phone</label>
+    <input type="text" class="form-control" id="phone" placeholder="enter phone no">
+    <small id="chkphone" class="text-danger"></small>
+  </div>
+
+<div class="form-group">
+<label>plz select city</label>
+<select class="form-control" id="city">
+<option>selectcity</option>
+<option>nagpur</option>
+<option>pune</option>
+<option>nashik</option>
+<option>mumbai</option>
+</select>
+<small id="chkcity" class="text-danger"></small>
+</div>
+
+<div class="row">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="male" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+   Male
+  </label>
+</div>
+<div class="col-lg-3">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="female" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Female
+  </label>
+</div>
+</div>
+</div>
+<small id="chkgender" class="text-danger"></small>
+
+<br>
+<br>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Credit</label>
+    <input type="text" class="form-control" id="credit" placeholder="Enter credit card number">
+    <small id="chkcredit" class="text-danger"></small>
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">IPaddress</label>
+    <input type="text" class="form-control" id="ip" placeholder="enter ip address">
+    <small id="chkip" class="text-danger"></small>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
 </div>
 
 
@@ -289,11 +442,13 @@
 
 
 
-<!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-	</body>
+  	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  </body>
 </html>
